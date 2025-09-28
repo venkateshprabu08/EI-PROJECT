@@ -1,17 +1,17 @@
-// File: LoggerSingletonDemo.java
+
 import java.time.LocalDateTime;
 
-// Simple thread-safe singleton logger
+
 class Logger {
     private static volatile Logger instance;
     private Logger() {
-        // private ctor
+    
     }
 
     public static Logger getInstance() {
-        if (instance == null) { // first check (no locking)
+        if (instance == null) { 
             synchronized (Logger.class) {
-                if (instance == null) { // second check (with locking)
+                if (instance == null) { 
                     instance = new Logger();
                 }
             }
@@ -33,7 +33,7 @@ public class LoggerSingletonDemo {
         Logger logger = Logger.getInstance();
         logger.info("Application started.");
 
-        // Simulate another part of app retrieving logger
+     
         Logger.getInstance().info("Another module logging an info message.");
 
         logger.error("An error occurred (simulated).");

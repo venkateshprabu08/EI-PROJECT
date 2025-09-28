@@ -1,17 +1,15 @@
-// File: MediaAdapterDemo.java
 
-// Target interface
 interface MediaPlayer {
     void play(String audioType, String fileName);
 }
 
-// Adaptee interface (advanced players)
+
 interface AdvancedMediaPlayer {
     void playMp4(String fileName);
     // imagine more advanced methods for different formats
 }
 
-// Concrete Adaptee
+
 class Mp4Player implements AdvancedMediaPlayer {
     @Override
     public void playMp4(String fileName) {
@@ -19,7 +17,7 @@ class Mp4Player implements AdvancedMediaPlayer {
     }
 }
 
-// Adapter: makes AdvancedMediaPlayer compatible with MediaPlayer
+
 class MediaAdapter implements MediaPlayer {
     AdvancedMediaPlayer advancedMusicPlayer;
 
@@ -39,7 +37,7 @@ class MediaAdapter implements MediaPlayer {
     }
 }
 
-// Client that uses MediaPlayer
+
 class AudioPlayer implements MediaPlayer {
     @Override
     public void play(String audioType, String fileName) {
@@ -55,7 +53,7 @@ class AudioPlayer implements MediaPlayer {
     }
 }
 
-// Demo runner
+
 public class MediaAdapterDemo {
     public static void main(String[] args) {
         AudioPlayer player = new AudioPlayer();

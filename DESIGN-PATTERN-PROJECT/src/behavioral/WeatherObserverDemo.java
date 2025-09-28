@@ -1,19 +1,19 @@
-// File: WeatherObserverDemo.java
+
 import java.util.*;
 
-// Observer interface
+
 interface Observer {
     void update(float temperature, float humidity, float pressure);
 }
 
-// Subject interface
+
 interface Subject {
     void registerObserver(Observer o);
     void removeObserver(Observer o);
     void notifyObservers();
 }
 
-// Concrete Subject
+
 class WeatherStation implements Subject {
     private List<Observer> observers = new ArrayList<>();
     private float temperature;
@@ -37,7 +37,7 @@ class WeatherStation implements Subject {
         }
     }
 
-    // Called when new measurements arrive
+   
     public void setMeasurements(float temperature, float humidity, float pressure) {
         this.temperature = temperature;
         this.humidity = humidity;

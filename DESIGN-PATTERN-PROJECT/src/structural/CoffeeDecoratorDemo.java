@@ -1,12 +1,12 @@
-// File: CoffeeDecoratorDemo.java
 
-// Component
+
+
 interface Coffee {
     String getDescription();
     double cost();
 }
 
-// Concrete Component
+
 class SimpleCoffee implements Coffee {
     @Override
     public String getDescription() {
@@ -19,7 +19,7 @@ class SimpleCoffee implements Coffee {
     }
 }
 
-// Base Decorator
+
 abstract class CoffeeDecorator implements Coffee {
     protected Coffee decoratedCoffee;
     public CoffeeDecorator(Coffee coffee) {
@@ -33,7 +33,7 @@ abstract class CoffeeDecorator implements Coffee {
     }
 }
 
-// Concrete Decorators
+
 class MilkDecorator extends CoffeeDecorator {
     public MilkDecorator(Coffee coffee) {
         super(coffee);
@@ -66,7 +66,7 @@ class SugarDecorator extends CoffeeDecorator {
     }
 }
 
-// Demo runner
+
 public class CoffeeDecoratorDemo {
     public static void main(String[] args) {
         Coffee coffee = new SimpleCoffee();

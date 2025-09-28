@@ -1,6 +1,6 @@
 package behavioral;
 
-// File: PaymentStrategyDemo.java
+
 import java.util.*;
 
 // Strategy interface
@@ -8,7 +8,7 @@ interface PaymentStrategy {
     void pay(int amount);
 }
 
-// Concrete strategy: Credit Card
+
 class CreditCardStrategy implements PaymentStrategy {
     private String name;
     private String cardNumber;
@@ -25,11 +25,11 @@ class CreditCardStrategy implements PaymentStrategy {
     @Override
     public void pay(int amount) {
         System.out.println("Paid " + amount + " using Credit Card. Name: " + name);
-        // In real app: perform validation, network call, tokenization...
+       
     }
 }
 
-// Concrete strategy: PayPal
+
 class PayPalStrategy implements PaymentStrategy {
     private String emailId;
     private String password;
@@ -42,11 +42,11 @@ class PayPalStrategy implements PaymentStrategy {
     @Override
     public void pay(int amount) {
         System.out.println("Paid " + amount + " using PayPal. Email: " + emailId);
-        // In real app: authenticate and process payment
+      
     }
 }
 
-// Context
+
 class ShoppingCart {
     private List<Item> items = new ArrayList<>();
 
@@ -72,18 +72,18 @@ class ShoppingCart {
     }
 }
 
-// Demo runner
+
 public class PaymentStrategyDemo {
     public static void main(String[] args) {
         ShoppingCart cart = new ShoppingCart();
         cart.addItem("Book", 300);
         cart.addItem("Pen", 20);
 
-        // Pay by credit card
+       
         PaymentStrategy card = new CreditCardStrategy("Alice", "1234-5678-9012-3456", "123", "12/27");
         cart.pay(card);
 
-        // Pay by PayPal
+      
         cart.addItem("Notebook", 120);
         PaymentStrategy paypal = new PayPalStrategy("alice@example.com", "password123");
         cart.pay(paypal);

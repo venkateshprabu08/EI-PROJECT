@@ -28,13 +28,3 @@ Each file can be compiled and executed individually from the `src` folder.
 6. **Decorator Pattern** → `CoffeeDecoratorDemo.java`  
    - Coffee decorated dynamically with Milk and Sugar.  
 
----
-
-## 🛠️ How to Compile & Run
-
-### Prerequisites
-- Install **Java 8+** (JDK).  
-- Verify installation:
-  ```bash
-  java -version
-  javac -version
